@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:firealarm_smart/widgets/custom_switch.dart';
 
+bool statusSystem = false;
+
 class HomeScreen extends GetWidget<HomeController> {
   @override
   Widget build(BuildContext context) {
@@ -25,17 +27,22 @@ class HomeScreen extends GetWidget<HomeController> {
                         style: AppStyle.txtBodoniBTBold28
                             .copyWith(letterSpacing: 0.36))),
                 actions: [
-                  Padding(
-                      padding:
-                          getPadding(left: 16, top: 4, right: 16, bottom: 15),
-                      child: ClipRRect(
-                          borderRadius:
-                              BorderRadius.circular(getHorizontalSize(10.00)),
-                          child: CommonImageView(
-                              imagePath: ImageConstant.imgIcon,
-                              height: getSize(36.00),
-                              width: getSize(36.00),
-                              fit: BoxFit.cover)))
+                  ElevatedButton(
+                    child: CommonImageView(
+                      imagePath: ImageConstant.imgIcon,
+                      height: getSize(36.00),
+                      width: getSize(36.00),
+                      // fit: BoxFit.cover,
+                    ),
+                    onPressed: () {
+                      print(
+                          "---------->Next to Scanpage: Scan And Connect BLE");
+                      Get.toNamed(AppRoutes.findDevicesScreen);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
                 ]),
             body: SingleChildScrollView(
                 child: Padding(
@@ -323,9 +330,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                 MainAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                              ElevatedButton(
                                                                 child:
                                                                     CommonImageView(
                                                                   imagePath:
@@ -335,17 +340,27 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                       getVerticalSize(
                                                                     100.00,
                                                                   ),
-                                                                  width:
-                                                                      getHorizontalSize(
-                                                                    ((size.width /
-                                                                            2) -
-                                                                        10),
-                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .fitWidth,
+                                                                ),
+                                                                onPressed: () {
+                                                                  print(
+                                                                      "---------->Next to Scanpage: Ban Do 1");
+                                                                },
+                                                                style: ElevatedButton
+                                                                    .styleFrom(
+                                                                  backgroundColor:
+                                                                      Color.fromARGB(
+                                                                          255,
+                                                                          250,
+                                                                          249,
+                                                                          250),
                                                                 ),
                                                               ),
                                                               Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
                                                                 child: Padding(
                                                                   padding:
                                                                       getPadding(
@@ -372,8 +387,9 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                 ),
                                                               ),
                                                               Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
                                                                 child: Padding(
                                                                   padding:
                                                                       getPadding(
@@ -426,34 +442,62 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                       ),
                                                                       child:
                                                                           Text(
-                                                                        "Tình Trạng:"
+                                                                        "Status:"
                                                                             .tr,
                                                                         overflow:
                                                                             TextOverflow.ellipsis,
                                                                         textAlign:
                                                                             TextAlign.left,
                                                                         style: AppStyle
-                                                                            .txtBodoniBTBold17
+                                                                            .txtArialBlack15
                                                                             .copyWith(
                                                                           height:
-                                                                              1.24,
+                                                                              1.0,
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    Obx(
-                                                                      () =>
-                                                                          CustomSwitch(
-                                                                        value: controller
-                                                                            .isSelectedSwitch
-                                                                            .value,
-                                                                        onChanged:
-                                                                            (value) {
-                                                                          controller
-                                                                              .isSelectedSwitch
-                                                                              .value = value;
-                                                                        },
+                                                                    if (statusSystem ==
+                                                                        true)
+                                                                      Text(
+                                                                        "CẢNH BÁO CHÁY"
+                                                                            .tr,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        textAlign:
+                                                                            TextAlign.left,
+                                                                        style: AppStyle
+                                                                            .txtArialBlack15
+                                                                            .copyWith(
+                                                                          height:
+                                                                              1.44,
+                                                                          color: Color.fromARGB(
+                                                                              255,
+                                                                              250,
+                                                                              3,
+                                                                              3),
+                                                                        ),
                                                                       ),
-                                                                    ),
+                                                                    if (statusSystem ==
+                                                                        false)
+                                                                      Text(
+                                                                        " An Toàn "
+                                                                            .tr,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        textAlign:
+                                                                            TextAlign.left,
+                                                                        style: AppStyle
+                                                                            .txtArialBlack15
+                                                                            .copyWith(
+                                                                          height:
+                                                                              1.24,
+                                                                          color: Color.fromARGB(
+                                                                              255,
+                                                                              3,
+                                                                              250,
+                                                                              15),
+                                                                        ),
+                                                                      ),
                                                                   ],
                                                                 ),
                                                               ),
@@ -481,9 +525,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                 MainAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                              ElevatedButton(
                                                                 child:
                                                                     CommonImageView(
                                                                   imagePath:
@@ -493,17 +535,27 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                       getVerticalSize(
                                                                     100.00,
                                                                   ),
-                                                                  width:
-                                                                      getHorizontalSize(
-                                                                    ((size.width /
-                                                                            2) -
-                                                                        10),
-                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .fitWidth,
+                                                                ),
+                                                                onPressed: () {
+                                                                  print(
+                                                                      "---------->Next to Scanpage: Ban Do 2");
+                                                                },
+                                                                style: ElevatedButton
+                                                                    .styleFrom(
+                                                                  backgroundColor:
+                                                                      Color.fromARGB(
+                                                                          255,
+                                                                          250,
+                                                                          249,
+                                                                          250),
                                                                 ),
                                                               ),
                                                               Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
                                                                 child: Padding(
                                                                   padding:
                                                                       getPadding(
@@ -530,8 +582,9 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                 ),
                                                               ),
                                                               Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
                                                                 child: Padding(
                                                                   padding:
                                                                       getPadding(
@@ -584,34 +637,62 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                       ),
                                                                       child:
                                                                           Text(
-                                                                        "Tình Trạng:"
+                                                                        "Status:"
                                                                             .tr,
                                                                         overflow:
                                                                             TextOverflow.ellipsis,
                                                                         textAlign:
                                                                             TextAlign.left,
                                                                         style: AppStyle
-                                                                            .txtBodoniBTBold17
+                                                                            .txtArialBlack15
                                                                             .copyWith(
                                                                           height:
-                                                                              1.24,
+                                                                              1.0,
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    Obx(
-                                                                      () =>
-                                                                          CustomSwitch(
-                                                                        value: controller
-                                                                            .isSelectedSwitch
-                                                                            .value,
-                                                                        onChanged:
-                                                                            (value) {
-                                                                          controller
-                                                                              .isSelectedSwitch
-                                                                              .value = value;
-                                                                        },
+                                                                    if (statusSystem ==
+                                                                        true)
+                                                                      Text(
+                                                                        "CẢNH BÁO CHÁY"
+                                                                            .tr,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        textAlign:
+                                                                            TextAlign.left,
+                                                                        style: AppStyle
+                                                                            .txtArialBlack15
+                                                                            .copyWith(
+                                                                          height:
+                                                                              1.44,
+                                                                          color: Color.fromARGB(
+                                                                              255,
+                                                                              250,
+                                                                              3,
+                                                                              3),
+                                                                        ),
                                                                       ),
-                                                                    ),
+                                                                    if (statusSystem ==
+                                                                        false)
+                                                                      Text(
+                                                                        " An Toàn "
+                                                                            .tr,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        textAlign:
+                                                                            TextAlign.left,
+                                                                        style: AppStyle
+                                                                            .txtArialBlack15
+                                                                            .copyWith(
+                                                                          height:
+                                                                              1.24,
+                                                                          color: Color.fromARGB(
+                                                                              255,
+                                                                              3,
+                                                                              250,
+                                                                              15),
+                                                                        ),
+                                                                      ),
                                                                   ],
                                                                 ),
                                                               ),
@@ -652,9 +733,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                 MainAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                              ElevatedButton(
                                                                 child:
                                                                     CommonImageView(
                                                                   imagePath:
@@ -664,12 +743,21 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                       getVerticalSize(
                                                                     100.00,
                                                                   ),
-                                                                  width:
-                                                                      getHorizontalSize(
-                                                                    ((size.width /
-                                                                            2) -
-                                                                        10),
-                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .fitWidth,
+                                                                ),
+                                                                onPressed: () {
+                                                                  print(
+                                                                      "---------->Next to Scanpage: Ban Do 3");
+                                                                },
+                                                                style: ElevatedButton
+                                                                    .styleFrom(
+                                                                  backgroundColor:
+                                                                      Color.fromARGB(
+                                                                          255,
+                                                                          250,
+                                                                          249,
+                                                                          250),
                                                                 ),
                                                               ),
                                                               Align(
@@ -769,20 +857,6 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    Obx(
-                                                                      () =>
-                                                                          CustomSwitch(
-                                                                        value: controller
-                                                                            .isSelectedSwitch
-                                                                            .value,
-                                                                        onChanged:
-                                                                            (value) {
-                                                                          controller
-                                                                              .isSelectedSwitch
-                                                                              .value = value;
-                                                                        },
-                                                                      ),
-                                                                    ),
                                                                   ],
                                                                 ),
                                                               ),
@@ -810,9 +884,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                 MainAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Align(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
+                                                              ElevatedButton(
                                                                 child:
                                                                     CommonImageView(
                                                                   imagePath:
@@ -822,12 +894,21 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                       getVerticalSize(
                                                                     100.00,
                                                                   ),
-                                                                  width:
-                                                                      getHorizontalSize(
-                                                                    ((size.width /
-                                                                            2) -
-                                                                        10),
-                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .fitWidth,
+                                                                ),
+                                                                onPressed: () {
+                                                                  print(
+                                                                      "---------->Next to Scanpage: Ban Do 4");
+                                                                },
+                                                                style: ElevatedButton
+                                                                    .styleFrom(
+                                                                  backgroundColor:
+                                                                      Color.fromARGB(
+                                                                          255,
+                                                                          250,
+                                                                          249,
+                                                                          250),
                                                                 ),
                                                               ),
                                                               Align(
@@ -925,20 +1006,6 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                           height:
                                                                               1.24,
                                                                         ),
-                                                                      ),
-                                                                    ),
-                                                                    Obx(
-                                                                      () =>
-                                                                          CustomSwitch(
-                                                                        value: controller
-                                                                            .isSelectedSwitch
-                                                                            .value,
-                                                                        onChanged:
-                                                                            (value) {
-                                                                          controller
-                                                                              .isSelectedSwitch
-                                                                              .value = value;
-                                                                        },
                                                                       ),
                                                                     ),
                                                                   ],
