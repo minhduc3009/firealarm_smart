@@ -25,7 +25,7 @@ class AppRoutes {
   static List<GetPage> pages = [
     GetPage(
       name: homeScreen,
-      page: () => HomeScreen(),
+      page: () => FlutterBlueApp(),
       bindings: [
         HomeBinding(),
       ],
@@ -46,14 +46,14 @@ class AppRoutes {
     ),
     GetPage(
       name: findDevicesScreen,
-      page: () => FindDevicesScreen(),
-      binding: FindDevicesBind(),
+      page: () => FlutterBlueApp(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: initialRoute,
-      page: () => AppNavigationScreen(),
+      page: () => FlutterBlueApp(),
       bindings: [
-        AppNavigationBinding(),
+        HomeBinding(),
       ],
     )
   ];

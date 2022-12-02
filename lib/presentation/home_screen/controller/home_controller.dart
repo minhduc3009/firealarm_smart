@@ -9,9 +9,9 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Future.delayed(const Duration(milliseconds: 3000), () {
-      Get.toNamed(AppRoutes.detectorScreen);
-    });
+    // Future.delayed(const Duration(milliseconds: 3000), () {
+    //   Get.toNamed(AppRoutes.detectorScreen);
+    // });
   }
 
   @override

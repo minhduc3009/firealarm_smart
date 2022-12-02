@@ -1090,22 +1090,22 @@ class DetectorScreen extends GetWidget<DetectorController> {
   }
 }
 
-class SensorPage extends StatefulWidget {
-  // const SensorPage({Key key, this.device}) : super(key: key);
-  // final BluetoothDevice device;
+// class SensorPage extends StatefulWidget {
+//   // const SensorPage({Key key, this.device}) : super(key: key);
+//   // final BluetoothDevice device;
 
-  @override
-  _SensorPageState createState() => _SensorPageState();
-}
+//   @override
+//   _SensorPageState createState() => _SensorPageState();
+// }
 
-class _SensorPageState extends State<SensorPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        "Waiting...",
-        style: TextStyle(fontSize: 24, color: Colors.red),
-      ),
-    );
-  }
-}
+// class _SensorPageState extends State<SensorPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: Text(
+//         "Waiting...",
+//         style: TextStyle(fontSize: 24, color: Colors.red),
+//       ),
+//     );
+//   }
+// }

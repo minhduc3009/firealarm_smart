@@ -156,11 +156,27 @@ class AppStyle {
   );
 
   static TextStyle txtArialRoundedMTBold48 = TextStyle(
-    color: ColorConstant.whiteA700,
+    color: const Color.fromARGB(255, 250, 2, 2),
     fontSize: getFontSize(
-      48,
+      45,
     ),
     fontFamily: 'Arial Rounded MT Bold',
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle txtArialRoundedMTBold48_antoan = TextStyle(
+    color: Color.fromARGB(255, 2, 248, 14),
+    fontSize: getFontSize(
+      45,
+    ),
+    fontFamily: 'Arial Rounded MT Bold',
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle txtArialAlarm = TextStyle(
+    color: ColorConstant.red100,
+    fontSize: getFontSize(
+      15,
+    ),
+    fontFamily: 'Arial',
     fontWeight: FontWeight.w400,
   );
 }

@@ -7,9 +7,9 @@ class MapController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Future.delayed(const Duration(milliseconds: 3000), () {
-      Get.toNamed(AppRoutes.homeScreen);
-    });
+    // Future.delayed(const Duration(milliseconds: 3000), () {
+    //   Get.toNamed(AppRoutes.homeScreen);
+    // });
   }
 
   @override
