@@ -1,0 +1,1 @@
+class Row1ItemModel {}
