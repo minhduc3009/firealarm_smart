@@ -522,6 +522,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                               ),
                                                                               onPressed: () {
                                                                                 print("---------->Next to Scanpage: Ban Do 1");
+                                                                                Get.toNamed(AppRoutes.mapScreen);
                                                                               },
                                                                               style: ElevatedButton.styleFrom(
                                                                                 backgroundColor: Color.fromARGB(255, 250, 249, 250),
@@ -644,6 +645,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                               ),
                                                                               onPressed: () {
                                                                                 print("---------->Next to Scanpage: Ban Do 2");
+                                                                                Get.toNamed(AppRoutes.mapScreen2);
                                                                               },
                                                                               style: ElevatedButton.styleFrom(
                                                                                 backgroundColor: Color.fromARGB(255, 250, 249, 250),
@@ -781,6 +783,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                               ),
                                                                               onPressed: () {
                                                                                 print("---------->Next to Scanpage: Ban Do 3");
+                                                                                Get.toNamed(AppRoutes.mapScreen3);
                                                                               },
                                                                               style: ElevatedButton.styleFrom(
                                                                                 backgroundColor: Color.fromARGB(255, 250, 249, 250),
@@ -903,6 +906,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                               ),
                                                                               onPressed: () {
                                                                                 print("---------->Next to Scanpage: Ban Do 4");
+                                                                                Get.toNamed(AppRoutes.mapScreen4);
                                                                               },
                                                                               style: ElevatedButton.styleFrom(
                                                                                 backgroundColor: Color.fromARGB(255, 250, 249, 250),

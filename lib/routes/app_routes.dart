@@ -18,6 +18,9 @@ class AppRoutes {
 
   static String mapScreen = '/map_screen';
 
+  static String mapScreen2 = '/map_screen2';
+  static String mapScreen3 = '/map_screen3';
+  static String mapScreen4 = '/map_screen4';
   static String findDevicesScreen = '/findDevice';
 
   // static String appNavigationScreen = '/app_navigation_screen';
@@ -40,6 +43,27 @@ class AppRoutes {
     GetPage(
       name: mapScreen,
       page: () => MapScreen(),
+      bindings: [
+        MapBinding(),
+      ],
+    ),
+    GetPage(
+      name: mapScreen2,
+      page: () => MapScreen2(),
+      bindings: [
+        MapBinding(),
+      ],
+    ),
+    GetPage(
+      name: mapScreen3,
+      page: () => MapScreen3(),
+      bindings: [
+        MapBinding(),
+      ],
+    ),
+    GetPage(
+      name: mapScreen4,
+      page: () => MapScreen4(),
       bindings: [
         MapBinding(),
       ],
