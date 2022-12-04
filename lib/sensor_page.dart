@@ -381,10 +381,8 @@ class _SensorPageState extends State<SensorPage> {
                                                                       currentValue_g ==
                                                                           'SOS003' ||
                                                                       currentValue_g ==
-                                                                          'SOS004' ||
-                                                                      currentValue_g ==
-                                                                          'alarm')
-                                                                  ? Text('$currentValue_g'.tr,
+                                                                          'SOS004')
+                                                                  ? Text('ALARM-$currentValue_g'.tr,
                                                                       overflow: TextOverflow
                                                                           .ellipsis,
                                                                       textAlign: TextAlign
@@ -394,11 +392,12 @@ class _SensorPageState extends State<SensorPage> {
                                                                               0.37,
                                                                           height:
                                                                               1.17))
-                                                                  : Text(currentValue_g.tr,
+                                                                  : Text('An Toàn'.tr,
                                                                       overflow: TextOverflow
                                                                           .ellipsis,
-                                                                      textAlign: TextAlign
-                                                                          .left,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .left,
                                                                       style: AppStyle.txtArialRoundedMTBold48_antoan.copyWith(
                                                                           letterSpacing: 0.37,
                                                                           height: 1.17))))
@@ -517,7 +516,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                                 2) -
                                                                             10,
                                                                         height:
-                                                                            220,
+                                                                            233,
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -640,7 +639,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                                 2) -
                                                                             10,
                                                                         height:
-                                                                            220,
+                                                                            233,
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -778,7 +777,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                                 2) -
                                                                             10,
                                                                         height:
-                                                                            220,
+                                                                            233,
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -901,7 +900,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                                 2) -
                                                                             10,
                                                                         height:
-                                                                            220,
+                                                                            233,
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
