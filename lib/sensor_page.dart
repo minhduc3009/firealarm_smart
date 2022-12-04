@@ -185,6 +185,7 @@ class _SensorPageState extends State<SensorPage> {
                                   var currentValue =
                                       _dataParser(snapshot.data!);
                                   currentValue_g = currentValue;
+                                  print(currentValue_g);
                                   return Column(
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:
@@ -364,14 +365,26 @@ class _SensorPageState extends State<SensorPage> {
                                                                   top: 1,
                                                                   right: 16,
                                                                   bottom: 17),
-                                                              child: (currentValue == "SOS001" ||
-                                                                      currentValue ==
-                                                                          "SOS002" ||
-                                                                      currentValue ==
-                                                                          "SOS003" ||
-                                                                      currentValue ==
-                                                                          "SOS004")
-                                                                  ? Text('Báo Cháy'.tr,
+                                                              // child:Text(currentValue_g.tr,
+                                                              //         overflow: TextOverflow
+                                                              //             .ellipsis,
+                                                              //         textAlign: TextAlign
+                                                              //             .left,
+                                                              //         style: AppStyle.txtArialRoundedMTBold48.copyWith(
+                                                              //             letterSpacing:
+                                                              //                 0.37,
+                                                              //             height:
+                                                              //                 1.17)),
+                                                              child: (currentValue_g == 'SOS001' ||
+                                                                      currentValue_g ==
+                                                                          'SOS002' ||
+                                                                      currentValue_g ==
+                                                                          'SOS003' ||
+                                                                      currentValue_g ==
+                                                                          'SOS004' ||
+                                                                      currentValue_g ==
+                                                                          'alarm')
+                                                                  ? Text('$currentValue_g'.tr,
                                                                       overflow: TextOverflow
                                                                           .ellipsis,
                                                                       textAlign: TextAlign
@@ -381,12 +394,14 @@ class _SensorPageState extends State<SensorPage> {
                                                                               0.37,
                                                                           height:
                                                                               1.17))
-                                                                  : Text('AN TOÀN'.tr,
+                                                                  : Text(currentValue_g.tr,
                                                                       overflow: TextOverflow
                                                                           .ellipsis,
-                                                                      textAlign:
-                                                                          TextAlign.left,
-                                                                      style: AppStyle.txtArialRoundedMTBold48_antoan.copyWith(letterSpacing: 0.37, height: 1.17))))
+                                                                      textAlign: TextAlign
+                                                                          .left,
+                                                                      style: AppStyle.txtArialRoundedMTBold48_antoan.copyWith(
+                                                                          letterSpacing: 0.37,
+                                                                          height: 1.17))))
                                                     ]))),
                                         Align(
                                             alignment: Alignment.center,

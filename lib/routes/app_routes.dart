@@ -26,13 +26,13 @@ class AppRoutes {
   // static String appNavigationScreen = '/app_navigation_screen';
 
   static List<GetPage> pages = [
-    GetPage(
-      name: homeScreen,
-      page: () => FlutterBlueApp(),
-      bindings: [
-        HomeBinding(),
-      ],
-    ),
+    // GetPage(
+    //   name: homeScreen,
+    //   page: () => FlutterBlueApp(),
+    //   bindings: [
+    //     HomeBinding(),
+    //   ],
+    // ),
     GetPage(
       name: detectorScreen,
       page: () => DetectorScreen(),
