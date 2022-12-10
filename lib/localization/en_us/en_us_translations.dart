@@ -11,8 +11,20 @@ final Map<String, String> enUs = {
   "lbl_home": "Home ",
   "lbl_nhi_t": "Nhiệt Độ",
   "lbl_mode": "MODE",
-  "msg_ch_c_c_b_c":
-      "Chú ý: Các Bước thoát hiểm\nBước 1: .....\nBước 2:.....\n\n\n\nThông tin khác: .......",
+  // "msg_ch_c_c_b_c":
+  //     "Chú ý: Các Bước thoát hiểm\nBước 1: .....\nBước 2:.....\n\n\n\nThông tin khác: .......",
+  "HuongDanThoatHiem1":
+      "Người phát hiện sự cố cháy có thể hô hoán bằng lời hoặc sử dụng các phương tiện báo động khác như: kẻng, loa, phát thanh, nhấn nút chuông báo cháy,… nhằm thông báo cho mọi người trong khu vực đang xảy ra cháy biết và để cùng phối hợp dập tắt đám cháy hoặc cùng thoát nạn an toàn khi thấy đám cháy đã phát triển lớn.",
+  "HuongDanThoatHiem2":
+      "Cắt điện khu vực xảy ra cháy là việc làm rất cần thiết nhằm ngăn ngừa đám cháy lan truyền đến các khu vực khác; đồng thời đảm bảo cho những người phun chất chữa cháy vào đám cháy không bị điện giật, không gây nguy hiểm đến sức khỏe và tính mạng của những người tham gia chữa cháy.",
+  "HuongDanThoatHiem3":
+      "- Người phát hiện đám cháy nhanh chóng di chuyển đến khu vực để các phương tiện chữa cháy ban đầu như bình chữa cháy xách tay, chăn dập cháy…, lấy và thao tác sử dụng để dập tắt đám cháy. Bên cạnh đó, có thể triển khai các phương tiện chữa cháy cố định là các họng nước chữa cháy vách tường (nếu có) để dập tắt đám cháy.\n"
+          "- Nếu xét thấy đám cháy có nguy cơ phát triển lớn, với các phương tiện hiện tại không thể dập tắt được đám cháy thì phải bằng mọi cách thoát ra bên ngoài và nhanh chóng gọi điện báo cháy cho lực lượng Cảnh sát phòng cháy, chữa cháy và cứu nạn, cứu hộ theo số 114.",
+  "HuongDanThoatHiem4":
+      "Nhanh chóng gọi điện đến số 114 nhằm báo cho lực lượng Cảnh sát phòng cháy, chữa cháy và cứu nạn, cứu hộ biết đang có đám cháy. Khi gọi điện báo cháy, cần chú ý như sau:\n"
+          "- Cách bấm số: Người gọi có thể sử dụng điện thoại di động hoặc điện thoại cố định để gọi báo cháy. Cách bấm điện thoại (mã vùng + 114) hoặc bấm trực tiếp 114.\n"
+          "- Nội dung: Thông báo cụ thể, rõ ràng địa chỉ nơi xảy ra cháy, loại công trình đang xảy ra cháy (nhà cao tầng, nhà chung cư…) và sơ bộ về quy mô của đám cháy. Đặc biệt, phải cung cấp thông tin có người bị nạn trong đám cháy hay không.",
+
   "lbl_an_to_n": "An Toàn",
   "lbl_b_n_2": "Bản Đồ 2",
   "lbl_app_navigation": "App Navigation",

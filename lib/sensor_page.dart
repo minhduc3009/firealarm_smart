@@ -18,11 +18,10 @@ import 'package:firealarm_smart/widgets/custom_button.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:firealarm_smart/widgets/custom_switch.dart';
 
-// bool statusSystem1 = false;
-// bool statusSystem2 = false;
-// bool statusSystem3 = false;
-// bool statusSystem4 = false;
-// ignore: non_constant_identifier_names
+import 'dart:typed_data';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/services.dart';
+
 String currentValue_g = "";
 
 class SensorPage extends StatefulWidget {
@@ -40,6 +39,8 @@ class _SensorPageState extends State<SensorPage> {
   Stream<List<int>>? stream;
   // ignore: deprecated_member_use, prefer_collection_literals
   List<double> traceDust = [];
+
+  AudioPlayer player = AudioPlayer();
 
   @override
   void initState() {
@@ -131,6 +132,23 @@ class _SensorPageState extends State<SensorPage> {
     return utf8.decode(dataFromDevice);
   }
 
+  Future<void> _playAlarmSound() async {
+    // String audioasset = "assets/audios/FireAlarm.mp3";
+    String audioasset = "assets/audios/bao_chay.mp3";
+    ByteData bytes = await rootBundle.load(audioasset); //load audio from assets
+    Uint8List audiobytes =
+        bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
+
+    int result = await player.playBytes(audiobytes);
+    if (result == 1) {
+      //play success
+      print("audio is playing.");
+    } else {
+      print("Error while playing audio.");
+    }
+    ;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -153,8 +171,8 @@ class _SensorPageState extends State<SensorPage> {
                       // fit: BoxFit.cover,
                     ),
                     onPressed: () {
-                      print(
-                          "---------->Next to Scanpage: Scan And Connect BLE");
+                      // print(
+                      //     "---------->Next to Scanpage: Scan And Connect BLE");
                       Get.toNamed(AppRoutes.findDevicesScreen);
                     },
                     style: ElevatedButton.styleFrom(
@@ -185,7 +203,14 @@ class _SensorPageState extends State<SensorPage> {
                                   var currentValue =
                                       _dataParser(snapshot.data!);
                                   currentValue_g = currentValue;
-                                  print(currentValue_g);
+                                  // print(currentValue_g);
+                                  if ((currentValue_g == 'SOS001' ||
+                                      currentValue_g == 'SOS002' ||
+                                      currentValue_g == 'SOS003' ||
+                                      currentValue_g == 'SOS004'))
+                                    _playAlarmSound();
+                                  else
+                                    player.stop();
                                   return Column(
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:
@@ -389,9 +414,9 @@ class _SensorPageState extends State<SensorPage> {
                                                                           .left,
                                                                       style: AppStyle.txtArialRoundedMTBold48.copyWith(
                                                                           letterSpacing:
-                                                                              0.37,
+                                                                              0.30,
                                                                           height:
-                                                                              1.17))
+                                                                              1.07))
                                                                   : Text('An Toàn'.tr,
                                                                       overflow: TextOverflow
                                                                           .ellipsis,
@@ -528,7 +553,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                           children: [
                                                                             ElevatedButton(
                                                                               child: CommonImageView(
-                                                                                imagePath: ImageConstant.imgImage,
+                                                                                imagePath: ImageConstant.img_fire_escape_1,
                                                                                 height: getVerticalSize(
                                                                                   100.00,
                                                                                 ),
@@ -651,7 +676,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                           children: [
                                                                             ElevatedButton(
                                                                               child: CommonImageView(
-                                                                                imagePath: ImageConstant.imgImg,
+                                                                                imagePath: ImageConstant.img_fire_escape_2,
                                                                                 height: getVerticalSize(
                                                                                   100.00,
                                                                                 ),
@@ -789,7 +814,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                           children: [
                                                                             ElevatedButton(
                                                                               child: CommonImageView(
-                                                                                imagePath: ImageConstant.imgImg120x155,
+                                                                                imagePath: ImageConstant.img_fire_escape_3,
                                                                                 height: getVerticalSize(
                                                                                   100.00,
                                                                                 ),
@@ -912,7 +937,7 @@ class _SensorPageState extends State<SensorPage> {
                                                                           children: [
                                                                             ElevatedButton(
                                                                               child: CommonImageView(
-                                                                                imagePath: ImageConstant.imgImg1,
+                                                                                imagePath: ImageConstant.img_fire_escape_4,
                                                                                 height: getVerticalSize(
                                                                                   100.00,
                                                                                 ),
@@ -1032,77 +1057,77 @@ class _SensorPageState extends State<SensorPage> {
                                                                   Alignment
                                                                       .topCenter,
                                                               children: [
-                                                                Align(
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .bottomLeft,
-                                                                    child: Container(
-                                                                        height: getVerticalSize(60.00),
-                                                                        width: size.width,
-                                                                        margin: getMargin(top: 5),
-                                                                        child: Stack(alignment: Alignment.centerLeft, children: [
-                                                                          Align(
-                                                                              alignment: Alignment.topLeft,
-                                                                              child: Container(height: getVerticalSize(79.00), width: size.width, margin: getMargin(bottom: 10))),
-                                                                          Align(
-                                                                              alignment: Alignment.centerLeft,
-                                                                              child: Container(
-                                                                                  height: getVerticalSize(88.00),
-                                                                                  width: getHorizontalSize(175.00),
-                                                                                  margin: getMargin(right: 10),
-                                                                                  child: Stack(alignment: Alignment.topLeft, children: [
-                                                                                    Align(alignment: Alignment.centerLeft, child: CommonImageView(imagePath: ImageConstant.imgRectangle8, height: getVerticalSize(88.00), width: getHorizontalSize(175.00))),
-                                                                                    Align(alignment: Alignment.topLeft, child: Padding(padding: getPadding(left: 30, top: 14, right: 30, bottom: 14), child: CommonImageView(imagePath: ImageConstant.imgIcon44x45, height: getVerticalSize(44.00), width: getHorizontalSize(45.00))))
-                                                                                  ]))),
-                                                                          Align(
-                                                                              alignment: Alignment.centerRight,
-                                                                              child: Container(
-                                                                                  height: getVerticalSize(88.00),
-                                                                                  width: getHorizontalSize(175.00),
-                                                                                  margin: getMargin(left: 10),
-                                                                                  child: Stack(alignment: Alignment.topRight, children: [
-                                                                                    Align(alignment: Alignment.centerLeft, child: CommonImageView(imagePath: ImageConstant.imgRectangle9, height: getVerticalSize(88.00), width: getHorizontalSize(175.00))),
-                                                                                    Align(alignment: Alignment.topRight, child: Padding(padding: getPadding(left: 29, top: 17, right: 29, bottom: 17), child: CommonImageView(imagePath: ImageConstant.imgIcon1, height: getVerticalSize(44.00), width: getHorizontalSize(45.00))))
-                                                                                  ])))
-                                                                        ]))),
-                                                                Align(
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .topCenter,
-                                                                    child: Container(
-                                                                        height: getSize(84.00),
-                                                                        width: getSize(84.00),
-                                                                        margin: getMargin(left: 153, right: 153, bottom: 10),
-                                                                        decoration: AppDecoration.stack5,
-                                                                        child: Stack(alignment: Alignment.centerLeft, children: [
-                                                                          Align(
-                                                                              alignment: Alignment.topCenter,
-                                                                              child: Padding(padding: getPadding(left: 9, top: 9, right: 9, bottom: 10), child: CommonImageView(imagePath: ImageConstant.imageNotFound, height: getVerticalSize(59.00), width: getHorizontalSize(66.00)))),
-                                                                          Align(
-                                                                              alignment: Alignment.centerLeft,
-                                                                              child: OutlineGradientButton(
-                                                                                  padding: EdgeInsets.only(left: getHorizontalSize(0.64), top: getVerticalSize(0.64), right: getHorizontalSize(0.64), bottom: getVerticalSize(0.64)),
-                                                                                  strokeWidth: getHorizontalSize(0.64),
-                                                                                  gradient: LinearGradient(begin: Alignment(0.15229885980992813, 0.16954022083096265), end: Alignment(0.7442529190974976, 0.9568965347991418), colors: [ColorConstant.bluegray10000, ColorConstant.whiteA700]),
-                                                                                  corners: Corners(topLeft: Radius.circular(42), topRight: Radius.circular(42), bottomLeft: Radius.circular(42), bottomRight: Radius.circular(42)),
-                                                                                  child: Container(
-                                                                                      decoration: AppDecoration.outline1.copyWith(borderRadius: BorderRadiusStyle.circleBorder42),
-                                                                                      child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
-                                                                                        Card(
-                                                                                            clipBehavior: Clip.antiAlias,
-                                                                                            elevation: 0,
-                                                                                            margin: getMargin(all: 12),
-                                                                                            shape: RoundedRectangleBorder(side: BorderSide(width: getHorizontalSize(0.17)), borderRadius: BorderRadiusStyle.circleBorder29),
-                                                                                            child: Container(
-                                                                                                height: getSize(58.00),
-                                                                                                width: getSize(58.00),
-                                                                                                decoration: AppDecoration.outline2.copyWith(borderRadius: BorderRadiusStyle.circleBorder29),
-                                                                                                child: Stack(alignment: Alignment.center, children: [
-                                                                                                  Align(alignment: Alignment.centerLeft, child: Container(height: getSize(58.00), width: getSize(58.00), decoration: BoxDecoration(borderRadius: BorderRadius.circular(getHorizontalSize(29.48)), gradient: LinearGradient(begin: Alignment(0.0576923134349861, 0.36923076757665196), end: Alignment(0.5000000319801854, 1.000000005616591), colors: [ColorConstant.whiteA70000, ColorConstant.bluegray50])))),
-                                                                                                  Align(alignment: Alignment.center, child: Padding(padding: getPadding(all: 4), child: ClipRRect(borderRadius: BorderRadius.circular(getHorizontalSize(25.06)), child: CommonImageView(imagePath: ImageConstant.imgEllipse6, height: getSize(50.00), width: getSize(50.00), fit: BoxFit.cover))))
-                                                                                                ])))
-                                                                                      ]))))
-                                                                        ])))
+                                                                // Align(
+                                                                //     alignment:
+                                                                //         Alignment
+                                                                //             .bottomLeft,
+                                                                //     child: Container(
+                                                                //         height: getVerticalSize(60.00),
+                                                                //         width: size.width,
+                                                                //         margin: getMargin(top: 5),
+                                                                //         child: Stack(alignment: Alignment.centerLeft, children: [
+                                                                //           Align(
+                                                                //               alignment: Alignment.topLeft,
+                                                                //               child: Container(height: getVerticalSize(79.00), width: size.width, margin: getMargin(bottom: 10))),
+                                                                //           Align(
+                                                                //               alignment: Alignment.centerLeft,
+                                                                //               child: Container(
+                                                                //                   height: getVerticalSize(88.00),
+                                                                //                   width: getHorizontalSize(175.00),
+                                                                //                   margin: getMargin(right: 10),
+                                                                //                   child: Stack(alignment: Alignment.topLeft, children: [
+                                                                //                     Align(alignment: Alignment.centerLeft, child: CommonImageView(imagePath: ImageConstant.imgRectangle8, height: getVerticalSize(88.00), width: getHorizontalSize(175.00))),
+                                                                //                     Align(alignment: Alignment.topLeft, child: Padding(padding: getPadding(left: 30, top: 14, right: 30, bottom: 14), child: CommonImageView(imagePath: ImageConstant.imgIcon44x45, height: getVerticalSize(44.00), width: getHorizontalSize(45.00))))
+                                                                //                   ]))),
+                                                                //           Align(
+                                                                //               alignment: Alignment.centerRight,
+                                                                //               child: Container(
+                                                                //                   height: getVerticalSize(88.00),
+                                                                //                   width: getHorizontalSize(175.00),
+                                                                //                   margin: getMargin(left: 10),
+                                                                //                   child: Stack(alignment: Alignment.topRight, children: [
+                                                                //                     Align(alignment: Alignment.centerLeft, child: CommonImageView(imagePath: ImageConstant.imgRectangle9, height: getVerticalSize(88.00), width: getHorizontalSize(175.00))),
+                                                                //                     Align(alignment: Alignment.topRight, child: Padding(padding: getPadding(left: 29, top: 17, right: 29, bottom: 17), child: CommonImageView(imagePath: ImageConstant.imgIcon1, height: getVerticalSize(44.00), width: getHorizontalSize(45.00))))
+                                                                //                   ])))
+                                                                //         ]))),
+                                                                // Align(
+                                                                //     alignment:
+                                                                //         Alignment
+                                                                //             .topCenter,
+                                                                //     child: Container(
+                                                                //         height: getSize(84.00),
+                                                                //         width: getSize(84.00),
+                                                                //         margin: getMargin(left: 153, right: 153, bottom: 10),
+                                                                //         decoration: AppDecoration.stack5,
+                                                                //         child: Stack(alignment: Alignment.centerLeft, children: [
+                                                                //           Align(
+                                                                //               alignment: Alignment.topCenter,
+                                                                //               child: Padding(padding: getPadding(left: 9, top: 9, right: 9, bottom: 10), child: CommonImageView(imagePath: ImageConstant.imageNotFound, height: getVerticalSize(59.00), width: getHorizontalSize(66.00)))),
+                                                                //           Align(
+                                                                //               alignment: Alignment.centerLeft,
+                                                                //               child: OutlineGradientButton(
+                                                                //                   padding: EdgeInsets.only(left: getHorizontalSize(0.64), top: getVerticalSize(0.64), right: getHorizontalSize(0.64), bottom: getVerticalSize(0.64)),
+                                                                //                   strokeWidth: getHorizontalSize(0.64),
+                                                                //                   gradient: LinearGradient(begin: Alignment(0.15229885980992813, 0.16954022083096265), end: Alignment(0.7442529190974976, 0.9568965347991418), colors: [ColorConstant.bluegray10000, ColorConstant.whiteA700]),
+                                                                //                   corners: Corners(topLeft: Radius.circular(42), topRight: Radius.circular(42), bottomLeft: Radius.circular(42), bottomRight: Radius.circular(42)),
+                                                                //                   child: Container(
+                                                                //                       decoration: AppDecoration.outline1.copyWith(borderRadius: BorderRadiusStyle.circleBorder42),
+                                                                //                       child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
+                                                                //                         Card(
+                                                                //                             clipBehavior: Clip.antiAlias,
+                                                                //                             elevation: 0,
+                                                                //                             margin: getMargin(all: 12),
+                                                                //                             shape: RoundedRectangleBorder(side: BorderSide(width: getHorizontalSize(0.17)), borderRadius: BorderRadiusStyle.circleBorder29),
+                                                                //                             child: Container(
+                                                                //                                 height: getSize(58.00),
+                                                                //                                 width: getSize(58.00),
+                                                                //                                 decoration: AppDecoration.outline2.copyWith(borderRadius: BorderRadiusStyle.circleBorder29),
+                                                                //                                 child: Stack(alignment: Alignment.center, children: [
+                                                                //                                   Align(alignment: Alignment.centerLeft, child: Container(height: getSize(58.00), width: getSize(58.00), decoration: BoxDecoration(borderRadius: BorderRadius.circular(getHorizontalSize(29.48)), gradient: LinearGradient(begin: Alignment(0.0576923134349861, 0.36923076757665196), end: Alignment(0.5000000319801854, 1.000000005616591), colors: [ColorConstant.whiteA70000, ColorConstant.bluegray50])))),
+                                                                //                                   Align(alignment: Alignment.center, child: Padding(padding: getPadding(all: 4), child: ClipRRect(borderRadius: BorderRadius.circular(getHorizontalSize(25.06)), child: CommonImageView(imagePath: ImageConstant.imgEllipse6, height: getSize(50.00), width: getSize(50.00), fit: BoxFit.cover))))
+                                                                //                                 ])))
+                                                                //                       ]))))
+                                                                //         ])))
                                                               ])))
                                                 ]))
                                       ]);
