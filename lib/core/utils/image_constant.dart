@@ -48,4 +48,11 @@ class ImageConstant {
   static String imageEco = 'assets/images/eco-friendly-svgrepo-com.svg';
   static String imageShcedule = 'assets/images/schedule-svgrepo-com.svg';
   static String imageHistory = 'assets/images/history-svgrepo-com.svg';
+
+  static String imgTieuLenh = 'assets/images/tieulenh.jpg';
+  static String img_fire_escape_1 = 'assets/images/fire_escape_1.jpg';
+  static String img_fire_escape_2 = 'assets/images/fire_escape_2.jpg';
+  static String img_fire_escape_3 = 'assets/images/fire_escape_3.jpg';
+  static String img_fire_escape_4 = 'assets/images/fire_escape_4.jpg';
+  static String img_fire_escape_5 = 'assets/images/fire_escape_5.jpg';
 }

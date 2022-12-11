@@ -17,7 +17,9 @@ dependencies:
   flutter_blue: ^0.8.0
   oscilloscope: ^0.2.0+1
   cupertino_icons: ^1.0.2
-
+  flutter_launcher_icons: ^0.11.0
+  audioplayers: ^0.20.1
+  readmore: ^2.2.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
@@ -27,8 +29,26 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+    - assets/audios/
   fonts: 
     - family: Ubuntu
       fonts: 
         - asset: assets/fonts/UbuntuRegular.ttf
           weight: 400
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/firealarm.jpg"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/firealarm.jpg"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/firealarm.jpg"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/firealarm.jpg"
