@@ -50,9 +50,12 @@ class ImageConstant {
   static String imageHistory = 'assets/images/history-svgrepo-com.svg';
 
   static String imgTieuLenh = 'assets/images/tieulenh.jpg';
+
   static String img_fire_escape_1 = 'assets/images/fire_escape_1.jpg';
+  // ví dụ thay đổi ảnh tầng 1:  đổi tên ảnh fire_escape_1.jpg
   static String img_fire_escape_2 = 'assets/images/fire_escape_2.jpg';
   static String img_fire_escape_3 = 'assets/images/fire_escape_3.jpg';
   static String img_fire_escape_4 = 'assets/images/fire_escape_4.jpg';
+
   static String img_fire_escape_5 = 'assets/images/fire_escape_5.jpg';
 }

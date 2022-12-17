@@ -134,7 +134,8 @@ class _SensorPageState extends State<SensorPage> {
 
   Future<void> _playAlarmSound() async {
     // String audioasset = "assets/audios/FireAlarm.mp3";
-    String audioasset = "assets/audios/bao_chay.mp3";
+    // String audioasset = "assets/audios/bao_chay.mp3";
+    String audioasset = "assets/audios/thongbao.mp3";
     ByteData bytes = await rootBundle.load(audioasset); //load audio from assets
     Uint8List audiobytes =
         bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);

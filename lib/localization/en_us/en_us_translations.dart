@@ -7,7 +7,7 @@ final Map<String, String> enUs = {
   "lbl_u_b_o_s_1": "Hệ Thống Báo Cháy Số 1",
   "lbl_49": "49%",
   "lbl_history": "HISTORY",
-  "msg_th_nh_vi_n_trong": "Thành viên trong nhà:",
+  "msg_th_nh_vi_n_trong": "Danh sách người dùng",
   "lbl_home": "Home ",
   "lbl_nhi_t": "Nhiệt Độ",
   "lbl_mode": "MODE",
@@ -46,6 +46,6 @@ final Map<String, String> enUs = {
   "lbl_detector": "Detector",
   "msg_b_n_1_t_ng": "Bản Đồ 1 - Tầng 1",
   "lbl_t_ng_3": "Tầng  3",
-  "lbl_my_home": "My Home",
+  "lbl_my_home": "Nhà hàng - Karaoke",
   "lbl_t_ng_2": "Tầng 2"
 };
